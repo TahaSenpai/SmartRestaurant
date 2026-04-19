@@ -10,3 +10,6 @@ class Avis(models.Model):
 
     def __str__(self):
         return f"Avis {self.note} - {self.plat}"
+    
+
+    

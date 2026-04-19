@@ -25,4 +25,10 @@ urlpatterns = [
     path('api/', include('orders.urls')),
     path('api/', include('reservations.urls')),
     path('api/', include('reviews.urls')),
+    path('api/', include('accounts.urls')),
 ]
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

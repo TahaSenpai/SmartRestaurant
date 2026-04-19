@@ -13,7 +13,7 @@ class Commande(models.Model):
     
 
 class CommandeItem(models.Model):
-    commande = models.ForeignKey(Commande, on_delete=models.CASCADE)
+    commande = models.ForeignKey(Commande, on_delete=models.CASCADE, related_name='items')
     plat = models.ForeignKey('menu.Plat', on_delete=models.CASCADE)
     quantite = models.IntegerField()
 

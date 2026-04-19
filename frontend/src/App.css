@@ -1,38 +1,92 @@
-.App {
+.container {
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 300px;
+  gap: 10px;
+}
+
+.form input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form button {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app-bg {
+  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5"); /* image restaurant */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* overlay sombre */
+.app-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* assombrit */
+  backdrop-filter: blur(3px); /* effet blur 🔥 */
+}
+
+/* contenu au-dessus */
+.app-content {
+  position: relative;
+  z-index: 2;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
 }

@@ -3,10 +3,16 @@ from django.db import models
 
 # Create your models here.
 class User(AbstractUser):
-    role = models.CharField(max_length=20, choices=[
+    role = models.CharField(
+    max_length=20,
+    choices=[
         ('admin', 'Admin'),
         ('client', 'Client')
-    ])
+    ],
+    default='client'  # IMPORTANT
+)
+
+    
 
     def __str__(self):
         return self.username

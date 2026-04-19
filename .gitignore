@@ -16,3 +16,10 @@ frontend/build/
 # Editor
 # =====================
 .vscode/
+
+# Django media
+backend/media/
+
+# fichiers système
+.DS_Store
+Thumbs.db
